@@ -1,2 +1,4 @@
 # rescuer-reportgen
-Generates reports for the ERTK module of the RESCUER communication platform textual (JSON) format.
+Generates reports for the ERTK module of the RESCUER communication platform in textual (JSON) format.
+
+http://www.rescuer-project.org/
