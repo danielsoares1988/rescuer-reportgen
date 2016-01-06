@@ -44,6 +44,8 @@ public class Gas extends Report {
 		Gas gas = new Gas();
 		Date date = new Date();
 
+		gas.generateMedia();
+
 		gas.keyword = "Gas";
 		gas.reportIdentifier = Long.toString(new Date().getTime());
 		gas.reportSender = ReportSender.create();

@@ -1,5 +1,6 @@
 import java.util.Random;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,7 +25,8 @@ public class Main {
 				r = Environmental.create();
 				break;
 			}
-			System.out.println(new ObjectMapper().writeValueAsString(r) + ",");
+			System.out.println(
+					new ObjectMapper().setSerializationInclusion(Include.NON_NULL).writeValueAsString(r) + ",");
 		}
 	}
 

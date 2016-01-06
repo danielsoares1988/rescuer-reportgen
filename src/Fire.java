@@ -45,6 +45,10 @@ public class Fire extends Report {
 		Fire fire = new Fire();
 		Date date = new Date();
 
+		// TODO: refatorar isso se der? criar um estático na classe pai?
+		fire.generateMedia(); // ou talvez nem chamar isso de generatemedia, sei
+								// lá...
+
 		fire.keyword = "Fogo";
 		fire.reportIdentifier = Long.toString(new Date().getTime());
 		fire.reportSender = ReportSender.create();

@@ -44,6 +44,8 @@ public class Explosion extends Report {
 		Explosion explosion = new Explosion();
 		Date date = new Date();
 
+		explosion.generateMedia();
+
 		explosion.keyword = "Explosão";
 		explosion.reportIdentifier = Long.toString(new Date().getTime());
 		explosion.reportSender = ReportSender.create();

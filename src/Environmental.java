@@ -44,6 +44,8 @@ public class Environmental extends Report {
 		Environmental environmental = new Environmental();
 		Date date = new Date();
 
+		environmental.generateMedia();
+
 		environmental.keyword = "Ambiental";
 		environmental.reportIdentifier = Long.toString(new Date().getTime());
 		environmental.reportSender = ReportSender.create();
