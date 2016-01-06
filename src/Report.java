@@ -24,7 +24,7 @@ public class Report {
 	public int mediaType = -1;
 
 	public void generateMedia() {
-		this.mediaType = new Random().nextInt(4);
+		this.mediaType = new Random().nextInt(3);
 		// TODO: These procedures for image and video be generalized
 		// MediaVideo and MediaPhoto likely should be the same class, though
 		if (mediaType == 1) {
