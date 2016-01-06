@@ -15,21 +15,18 @@ public class Report {
 	public String reportIdentifier;
 	public FormResponse[] formResponse;
 
-	// TODO: Deixar de ser 1 item pra ser n itens
 	public MediaPhoto[] mediaPhoto;
 	public MediaVideo[] mediaVideo;
 
-	// TODO: trocar por um enum, por hora: 0 = só texto, 1 = imagem, 2 = vídeo,
-	// 3 = imagem e vídeo -- não usar pra geração dessa massa, mas implementar
-	// pro futuro
-
+	//TODO: Replace with an ENUM, for now this is:
+	// 0 = text only, 1 = image, 2 = video, 3 = image and video (NYI)
 	@JsonIgnore
 	public int mediaType = -1;
 
 	public void generateMedia() {
 		this.mediaType = new Random().nextInt(4);
-		// TODO: These should obviously be generalized
-		// MediaVideo and MediaPhoto should likely be the same class
+		// TODO: These procedures for image and video be generalized
+		// MediaVideo and MediaPhoto likely should be the same class, though
 		if (mediaType == 1) {
 			this.mediaPhoto = new MediaPhoto[1];
 			MediaPhoto photo = new MediaPhoto();
