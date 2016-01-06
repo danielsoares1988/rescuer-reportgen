@@ -35,8 +35,8 @@ public class Utils {
 				return true;
 		return false;
 	}
-	
-	public static float nextFloatBetween(float min, float max){
+
+	public static float nextFloatBetween(float min, float max) {
 		if (min < max)
 			return min + (max - min) * new Random().nextFloat();
 		else
