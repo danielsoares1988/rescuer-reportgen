@@ -30,7 +30,7 @@ public class Report {
 		if (mediaType == 1) {
 			this.mediaPhoto = new MediaPhoto[1];
 			MediaPhoto photo = new MediaPhoto();
-			photo.mediaPath = "https://s3-eu-west-1.amazonaws.com/rescuer.media.filesimages/473159ae-8207-51c1-6b92-f99a2a6f7035.jpg";
+			photo.mediaPath = "https://s3-eu-west-1.amazonaws.com/rescuer.media.files/images/473159ae-8207-51c1-6b92-f99a2a6f7035.jpg";
 			photo.mediaIdentifier = "0";
 			photo.mediaTimestamp = Report.sdf.format(new Date());
 			photo.type = "image/jpg";

@@ -47,7 +47,7 @@ public class Explosion extends Report {
 		explosion.generateMedia();
 
 		explosion.keyword = "Explosão";
-		explosion.reportIdentifier = Long.toString(new Date().getTime());
+		explosion.reportIdentifier = Long.toString(new Date().getTime()+(new Random().nextInt(1000)-500));
 		explosion.reportSender = ReportSender.create();
 		explosion.reportPosition = explosion.reportSender.personPosition;
 		explosion.reportTimeStamp = Report.sdf.format(date);
