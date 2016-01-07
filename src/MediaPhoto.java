@@ -1,3 +1,4 @@
+//Realy is the same as MediaVideo, at least for now
 public class MediaPhoto {
 	public String mediaPath;
 	public String mediaIdentifier;
