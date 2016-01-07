@@ -45,10 +45,11 @@ public class Fire extends Report {
 		Fire fire = new Fire();
 		Date date = new Date();
 
-		// TODO: refactor this if at all possible, can static methods be overriden or overrides?
-		fire.generateMedia(); //also this call is kinda ugly
+		// TODO: refactor this if at all possible, can static methods be
+		// overriden or overrides?
+		fire.generateMedia(); // also this call is kinda ugly
 		fire.keyword = "Fogo";
-		fire.reportIdentifier = Long.toString(new Date().getTime()+(new Random().nextInt(1000)-500));		
+		fire.reportIdentifier = Long.toString(new Date().getTime() + (new Random().nextInt(1000) - 500));
 		fire.reportSender = ReportSender.create();
 		fire.reportPosition = fire.reportSender.personPosition;
 		fire.reportTimeStamp = Report.sdf.format(date);

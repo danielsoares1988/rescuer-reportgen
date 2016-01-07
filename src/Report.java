@@ -18,7 +18,7 @@ public class Report {
 	public MediaPhoto[] mediaPhoto;
 	public MediaVideo[] mediaVideo;
 
-	//TODO: Replace with an ENUM, for now this is:
+	// TODO: Replace with an ENUM, for now this is:
 	// 0 = text only, 1 = image, 2 = video, 3 = image and video (NYI)
 	@JsonIgnore
 	public int mediaType = -1;

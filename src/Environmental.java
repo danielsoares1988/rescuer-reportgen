@@ -47,7 +47,7 @@ public class Environmental extends Report {
 		environmental.generateMedia();
 
 		environmental.keyword = "Ambiental";
-		environmental.reportIdentifier = Long.toString(new Date().getTime()+(new Random().nextInt(1000)-500));
+		environmental.reportIdentifier = Long.toString(new Date().getTime() + (new Random().nextInt(1000) - 500));
 		environmental.reportSender = ReportSender.create();
 		environmental.reportPosition = environmental.reportSender.personPosition;
 		environmental.reportTimeStamp = Report.sdf.format(date);
