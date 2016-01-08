@@ -6,35 +6,38 @@ public class Explosion extends Report {
 
 		public final static int MAX_RESP = 4;
 
-		private static String noise[] = { "Sim", "Não" };
-		private static String reaction[] = { "Fogo", "Fumaça", "Outros" };
-		private static String damages[] = { "Danos visíveis", "Nenhum dano" };
+		private static FormAnswer noise[] = { new FormAnswer(0,"Sim"), new FormAnswer(1, "Não") };
+		private static FormAnswer reaction[] = {new FormAnswer(0, "Fogo"), new FormAnswer(1,"Fumaça"), new FormAnswer(2,"Outros") };
+		private static FormAnswer damages[] = { new FormAnswer(0,"Danos visíveis"), new FormAnswer(1,"Nenhum dano") };
 
 		public static ExplosionFormResponse create(int id, Date date) {
 			ExplosionFormResponse resp = new ExplosionFormResponse();
 			id = id == -1 ? new Random().nextInt(4) : id;
 			switch (id) {
 			case 0:
+				resp.identifier = 7;
 				resp.name = "Você ouviu algo antes da explosão?";
-				resp.type = "text";
-				resp.value = noise[new Random().nextInt(2)];
+//				resp.type = "text";
+				resp.singleAnswer = noise[new Random().nextInt(2)];
 				break;
 			case 1:
+				resp.identifier = 8;
 				resp.name = "Reação da explosão";
-				resp.type = "multichoice";
-				resp.value = Utils.choicesFrom(String.class, reaction, new Random().nextInt(3) + 1);
+//				resp.type = "multichoice";
+				resp.multiAnswer= Utils.choicesFrom(FormAnswer.class, reaction, new Random().nextInt(3) + 1);
 				break;
 			case 2:
+				resp.identifier = 9;
 				resp.name = "Há algum dano na estrutura física?";
-				resp.type = "text";
-				resp.value = damages[new Random().nextInt(2)];
+//				resp.type = "text";
+				resp.singleAnswer = damages[new Random().nextInt(2)];
 				break;
 			case 3:
+				resp.identifier = 3;
 				resp.name = "Você vê pessoas feridas?";
-				resp.type = "text";
-				resp.value = Integer.toString(injuredZones[new Random().nextInt(injuredZones.length)]);
+//				resp.type = "text";
+				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];
 			}
-			resp.identifier = Integer.toString(id);
 			resp.timestamp = Report.sdf.format(date == null ? new Date() : date);
 			return resp;
 		}

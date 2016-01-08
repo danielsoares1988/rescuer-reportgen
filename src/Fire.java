@@ -7,35 +7,40 @@ public class Fire extends Report {
 
 		public final static int MAX_RESP = 4;
 
-		private static String size[] = { "Grande", "Médio", "Pequeno" };
-		private static String flamesOrSmoke[] = { "Just Smoke", "Flames and Smoke" };
-		private static String colourOfTheSmoke[] = { "Light Grey", "Dark Grey", "Other" };
+		private static FormAnswer[] size = new FormAnswer[]{new FormAnswer(1, "Grande"), new FormAnswer(2, "Médio"), new FormAnswer(3, "Pequeno") };
+		private static FormAnswer[] flamesOrSmoke =  new FormAnswer[]{new FormAnswer(1, "Só Fumaça"), new FormAnswer(2,"Chamas e Fumaça") };
+		private static FormAnswer[] colourOfTheSmoke = new FormAnswer[]{new FormAnswer(1, "Cinza Claro"), new FormAnswer(2,"Cinza Escuro"), new FormAnswer(3,"Outros") };
 
 		public static FireFormResponse create(int id, Date date) {
 			FireFormResponse resp = new FireFormResponse();
 			id = id == -1 ? new Random().nextInt(4) : id;
+			FormAnswer answer = null;
 			switch (id) {
 			case 0:
+				resp.identifier = 0;
 				resp.name = "Qual o tamanho do fogo?";
-				resp.type = "text";
-				resp.value = size[new Random().nextInt(3)];
+				//resp.type = "text";
+				resp.singleAnswer= size[new Random().nextInt(3)];
 				break;
 			case 1:
+				resp.identifier = 1;
 				resp.name = "Você vê chamas ou fumaça?";
-				resp.type = "text";
-				resp.value = flamesOrSmoke[new Random().nextInt(2)];
+//				resp.type = "text";
+				resp.singleAnswer = flamesOrSmoke[new Random().nextInt(2)];
 				break;
 			case 2:
+				resp.identifier = 2;
+
 				resp.name = "Qual a cor da fumaça?";
-				resp.type = "text";
-				resp.value = colourOfTheSmoke[new Random().nextInt(3)];
+//				resp.type = "text";
+				resp.singleAnswer = colourOfTheSmoke[new Random().nextInt(3)];
 				break;
 			case 3:
+				resp.identifier = 3;
 				resp.name = "Você vê pessoas feridas?";
-				resp.type = "text";
-				resp.value = Integer.toString(injuredZones[new Random().nextInt(injuredZones.length)]);
+//				resp.type = "text";
+				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];
 			}
-			resp.identifier = Integer.toString(id);
 			resp.timestamp = Report.sdf.format(date == null ? new Date() : date);
 			return resp;
 		}

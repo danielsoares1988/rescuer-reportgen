@@ -5,36 +5,42 @@ public class Gas extends Report {
 
 	public static class GasFormResponse extends FormResponse {
 		public static final int MAX_RESP = 4;
-		private static String itchType[] = new String[] { "Olhos", "Pele", "Vias Respiratórias", "Mucosa" };
-		private static String smells[] = new String[] { "Peixe", "Pungente", "Cloro", "Outros" };
-		private static String cloud[] = new String[] { "Cinza", "Vermelha", "Amarela", "Nenhuma" };
+		private static FormAnswer itchType[] = new FormAnswer[] { new FormAnswer(0, "Olhos"), new FormAnswer(1, "Pele"), new FormAnswer(2,"Vias Respiratórias"),
+				new FormAnswer(3, "Mucosa")};
+		private static FormAnswer smells[] = new FormAnswer[] { new FormAnswer(0,"Peixe"), new FormAnswer(1,"Pungente"), new FormAnswer(2, "Cloro"),
+				new FormAnswer(3,"Outros") };
+		private static FormAnswer cloud[] = new FormAnswer[] { new FormAnswer(0, "Cinza"),new FormAnswer(1, "Vermelha"),
+				new FormAnswer(2, "Amarela"), new FormAnswer(3, "Nenhuma") };
 
 		public static GasFormResponse create(int id, Date date) {
 			GasFormResponse resp = new GasFormResponse();
 			id = id == -1 ? new Random().nextInt(4) : id;
 			switch (id) {
 			case 0:
+				resp.identifier = 4;
 				resp.name = "Você está sentindo alguma irritação?";
-				resp.type = "multichoice";
-				resp.value = Utils.choicesFrom(String.class, itchType, new Random().nextInt(itchType.length) + 1);
+				//resp.type = "multichoice";
+				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, itchType, new Random().nextInt(itchType.length) + 1);
 				break;
 			case 1:
+				resp.identifier = 5;
 				resp.name = "Você está sentindo algum cheiro no ar?";
-				resp.type = "text";
-				resp.value = smells[new Random().nextInt(4)];
+				//resp.type = "text";
+				resp.singleAnswer = smells[new Random().nextInt(4)];
 				break;
 			case 2:
+				resp.identifier = 6;
 				resp.name = "Há uma nuvem colorida?";
-				resp.type = "text";
-				resp.value = cloud[new Random().nextInt(4)];
+				//resp.type = "text";
+				resp.singleAnswer = cloud[new Random().nextInt(4)];
 				break;
 			case 3:
+				resp.identifier = 3;
 				resp.name = "Você vê pessoas feridas?";
-				resp.type = "text";
-				resp.value = Integer.toString(injuredZones[new Random().nextInt(injuredZones.length)]);
+				//resp.type = "text";
+				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];
 				break;
 			}
-			resp.identifier = Integer.toString(id);
 			resp.timestamp = Report.sdf.format(date == null ? new Date() : date);
 			return resp;
 		}
