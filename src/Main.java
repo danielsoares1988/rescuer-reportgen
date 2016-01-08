@@ -27,6 +27,12 @@ public class Main {
 			}
 			System.out.println(
 					new ObjectMapper().setSerializationInclusion(Include.NON_NULL).writeValueAsString(r) + ",");
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 

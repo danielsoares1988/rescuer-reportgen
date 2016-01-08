@@ -40,6 +40,8 @@ public class Fire extends Report {
 			return resp;
 		}
 	}
+	
+	
 
 	public static Fire create() {
 		Fire fire = new Fire();
@@ -49,7 +51,8 @@ public class Fire extends Report {
 		// overriden or overrides?
 		fire.generateMedia(); // also this call is kinda ugly
 		fire.keyword = "Fogo";
-		fire.reportIdentifier = Long.toString(new Date().getTime() + (new Random().nextInt(1000) - 500));
+		fire.reportIdentifier = Long.toString(new Date().getTime() );
+		
 		fire.reportSender = ReportSender.create();
 		fire.reportPosition = fire.reportSender.personPosition;
 		fire.reportTimeStamp = Report.sdf.format(date);

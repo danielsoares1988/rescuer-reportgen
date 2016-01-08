@@ -50,7 +50,6 @@ public class Report {
 		} else if (mediaType != 0) {
 			throw new IllegalArgumentException();
 		}
-
 	}
 
 }
