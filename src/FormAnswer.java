@@ -1,11 +1,11 @@
 
 public class FormAnswer {
 
-	public int id;
+	public int identifier;
 	public Object value;
 	
 	public FormAnswer(int id,Object value){
-		this.id = id;
+		this.identifier = id;
 		this.value = value;
 	}
 }
