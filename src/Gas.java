@@ -17,25 +17,25 @@ public class Gas extends Report {
 			id = id == -1 ? new Random().nextInt(4) : id;
 			switch (id) {
 			case 0:
-				resp.identifier = 4;
+				resp.identifier = "4";
 				resp.name = "Você está sentindo alguma irritação?";
 				//resp.type = "multichoice";
 				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, itchType, new Random().nextInt(itchType.length) + 1);
 				break;
 			case 1:
-				resp.identifier = 5;
+				resp.identifier = "5";
 				resp.name = "Você está sentindo algum cheiro no ar?";
 				//resp.type = "text";
 				resp.singleAnswer = smells[new Random().nextInt(4)];
 				break;
 			case 2:
-				resp.identifier = 6;
+				resp.identifier = "6";
 				resp.name = "Há uma nuvem colorida?";
 				//resp.type = "text";
 				resp.singleAnswer = cloud[new Random().nextInt(4)];
 				break;
 			case 3:
-				resp.identifier = 3;
+				resp.identifier = "3";
 				resp.name = "Você vê pessoas feridas?";
 				//resp.type = "text";
 				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];

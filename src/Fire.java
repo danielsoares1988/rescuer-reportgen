@@ -17,26 +17,26 @@ public class Fire extends Report {
 			FormAnswer answer = null;
 			switch (id) {
 			case 0:
-				resp.identifier = 0;
+				resp.identifier = "0";
 				resp.name = "Qual o tamanho do fogo?";
 				//resp.type = "text";
 				resp.singleAnswer= size[new Random().nextInt(3)];
 				break;
 			case 1:
-				resp.identifier = 1;
+				resp.identifier = "1";
 				resp.name = "Você vê chamas ou fumaça?";
 //				resp.type = "text";
 				resp.singleAnswer = flamesOrSmoke[new Random().nextInt(2)];
 				break;
 			case 2:
-				resp.identifier = 2;
+				resp.identifier = "2";
 
 				resp.name = "Qual a cor da fumaça?";
 //				resp.type = "text";
 				resp.singleAnswer = colourOfTheSmoke[new Random().nextInt(3)];
 				break;
 			case 3:
-				resp.identifier = 3;
+				resp.identifier = "3";
 				resp.name = "Você vê pessoas feridas?";
 //				resp.type = "text";
 				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];

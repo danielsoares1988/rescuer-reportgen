@@ -15,25 +15,25 @@ public class Explosion extends Report {
 			id = id == -1 ? new Random().nextInt(4) : id;
 			switch (id) {
 			case 0:
-				resp.identifier = 7;
+				resp.identifier = "7";
 				resp.name = "Você ouviu algo antes da explosão?";
 //				resp.type = "text";
 				resp.singleAnswer = noise[new Random().nextInt(2)];
 				break;
 			case 1:
-				resp.identifier = 8;
+				resp.identifier = "8";
 				resp.name = "Reação da explosão";
 //				resp.type = "multichoice";
 				resp.multiAnswer= Utils.choicesFrom(FormAnswer.class, reaction, new Random().nextInt(3) + 1);
 				break;
 			case 2:
-				resp.identifier = 9;
+				resp.identifier = "9";
 				resp.name = "Há algum dano na estrutura física?";
 //				resp.type = "text";
 				resp.singleAnswer = damages[new Random().nextInt(2)];
 				break;
 			case 3:
-				resp.identifier = 3;
+				resp.identifier = "3";
 				resp.name = "Você vê pessoas feridas?";
 //				resp.type = "text";
 				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];

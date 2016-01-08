@@ -17,25 +17,25 @@ public class Environmental extends Report {
 			id = id == -1 ? new Random().nextInt(4) : id;
 			switch (id) {
 			case 0:
-				resp.identifier = 4;
+				resp.identifier = "4";
 				resp.name = "Você está sentindo alguma irritação?";
 				//resp.type = "multichoice";
 				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, itchType, new Random().nextInt(itchType.length) + 1);
 				break;
 			case 1:
-				resp.identifier = 10;
+				resp.identifier = "10";
 				resp.name = "Há algum dano?";
 				//resp.type = "multichoice";
 				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, damagesTo, new Random().nextInt(4) + 1);
 				break;
 			case 2:
-				resp.identifier = 11;
+				resp.identifier = "11";
 				resp.name = "Há algum fluído colorido na água ou no chão?";
 				//resp.type = "text";
 				resp.singleAnswer = fluids[new Random().nextInt(2)];
 				break;
 			case 3:
-				resp.identifier = 3;
+				resp.identifier = "3";
 				resp.name = "Você vê pessoas feridas?";
 				//resp.type = "text";
 				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];
