@@ -23,6 +23,8 @@ public class Report {
 	@JsonIgnore
 	public int mediaType = -1;
 
+	public String keywordIdentifier = "rTypeUnkn";
+
 	public void generateMedia() {
 		this.mediaType = new Random().nextInt(3);
 		// TODO: These procedures for image and video be generalized

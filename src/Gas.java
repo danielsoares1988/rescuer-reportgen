@@ -3,6 +3,10 @@ import java.util.Random;
 
 public class Gas extends Report {
 
+	public Gas(){
+		keywordIdentifier = "rType3";
+	}
+	
 	public static class GasFormResponse extends FormResponse {
 		public static final int MAX_RESP = 4;
 		private static FormAnswer itchType[] = new FormAnswer[] { new FormAnswer(0, "Olhos"), new FormAnswer(1, "Pele"), new FormAnswer(2,"Vias Respiratórias"),
@@ -19,25 +23,25 @@ public class Gas extends Report {
 			case 0:
 				resp.identifier = "4";
 				resp.name = "Você está sentindo alguma irritação?";
-				//resp.type = "multichoice";
+				resp.type = "text";
 				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, itchType, new Random().nextInt(itchType.length) + 1);
 				break;
 			case 1:
 				resp.identifier = "5";
 				resp.name = "Você está sentindo algum cheiro no ar?";
-				//resp.type = "text";
+				resp.type = "text";
 				resp.singleAnswer = smells[new Random().nextInt(4)];
 				break;
 			case 2:
 				resp.identifier = "6";
 				resp.name = "Há uma nuvem colorida?";
-				//resp.type = "text";
+				resp.type = "text";
 				resp.singleAnswer = cloud[new Random().nextInt(4)];
 				break;
 			case 3:
 				resp.identifier = "3";
 				resp.name = "Você vê pessoas feridas?";
-				//resp.type = "text";
+				resp.type = "integ";
 				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];
 				break;
 			}
