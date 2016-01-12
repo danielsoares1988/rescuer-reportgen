@@ -3,18 +3,18 @@ import java.util.Random;
 
 public class Gas extends Report {
 
-	public Gas(){
+	public Gas() {
 		keywordIdentifier = "rType3";
 	}
-	
+
 	public static class GasFormResponse extends FormResponse {
 		public static final int MAX_RESP = 4;
-		private static FormAnswer itchType[] = new FormAnswer[] { new FormAnswer(0, "Olhos"), new FormAnswer(1, "Pele"), new FormAnswer(2,"Vias Respiratórias"),
-				new FormAnswer(3, "Mucosa")};
-		private static FormAnswer smells[] = new FormAnswer[] { new FormAnswer(0,"Peixe"), new FormAnswer(1,"Pungente"), new FormAnswer(2, "Cloro"),
-				new FormAnswer(3,"Outros") };
-		private static FormAnswer cloud[] = new FormAnswer[] { new FormAnswer(0, "Cinza"),new FormAnswer(1, "Vermelha"),
-				new FormAnswer(2, "Amarela"), new FormAnswer(3, "Nenhuma") };
+		private static FormAnswer itchType[] = new FormAnswer[] { new FormAnswer(0, "Olhos"), new FormAnswer(1, "Pele"),
+				new FormAnswer(2, "Vias Respiratórias"), new FormAnswer(3, "Mucosa") };
+		private static FormAnswer smells[] = new FormAnswer[] { new FormAnswer(0, "Peixe"),
+				new FormAnswer(1, "Pungente"), new FormAnswer(2, "Cloro"), new FormAnswer(3, "Outros") };
+		private static FormAnswer cloud[] = new FormAnswer[] { new FormAnswer(0, "Cinza"),
+				new FormAnswer(1, "Vermelha"), new FormAnswer(2, "Amarela"), new FormAnswer(3, "Nenhuma") };
 
 		public static GasFormResponse create(int id, Date date) {
 			GasFormResponse resp = new GasFormResponse();
@@ -24,7 +24,8 @@ public class Gas extends Report {
 				resp.identifier = "4";
 				resp.name = "Você está sentindo alguma irritação?";
 				resp.type = "text";
-				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, itchType, new Random().nextInt(itchType.length) + 1);
+				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, itchType,
+						new Random().nextInt(itchType.length) + 1);
 				break;
 			case 1:
 				resp.identifier = "5";

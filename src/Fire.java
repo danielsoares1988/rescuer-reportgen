@@ -7,9 +7,12 @@ public class Fire extends Report {
 
 		public final static int MAX_RESP = 4;
 
-		private static FormAnswer[] size = new FormAnswer[]{new FormAnswer(0, "Grande"), new FormAnswer(1, "Médio"), new FormAnswer(2, "Pequeno") };
-		private static FormAnswer[] flamesOrSmoke =  new FormAnswer[]{new FormAnswer(0, "Só Fumaça"), new FormAnswer(1,"Chamas e Fumaça") };
-		private static FormAnswer[] colourOfTheSmoke = new FormAnswer[]{new FormAnswer(0, "Cinza Claro"), new FormAnswer(1,"Cinza Escuro"), new FormAnswer(2,"Outros") };
+		private static FormAnswer[] size = new FormAnswer[] { new FormAnswer(0, "Grande"), new FormAnswer(1, "Médio"),
+				new FormAnswer(2, "Pequeno") };
+		private static FormAnswer[] flamesOrSmoke = new FormAnswer[] { new FormAnswer(0, "Só Fumaça"),
+				new FormAnswer(1, "Chamas e Fumaça") };
+		private static FormAnswer[] colourOfTheSmoke = new FormAnswer[] { new FormAnswer(0, "Cinza Claro"),
+				new FormAnswer(1, "Cinza Escuro"), new FormAnswer(2, "Outros") };
 
 		public static FireFormResponse create(int id, Date date) {
 			FireFormResponse resp = new FireFormResponse();
@@ -19,7 +22,7 @@ public class Fire extends Report {
 				resp.identifier = "0";
 				resp.name = "Qual o tamanho do fogo?";
 				resp.type = "text";
-				resp.singleAnswer= size[new Random().nextInt(3)];
+				resp.singleAnswer = size[new Random().nextInt(3)];
 				break;
 			case 1:
 				resp.identifier = "1";
@@ -44,11 +47,10 @@ public class Fire extends Report {
 			return resp;
 		}
 	}
-	
-	public Fire(){
-		keywordIdentifier  = "rType1";
+
+	public Fire() {
+		keywordIdentifier = "rType1";
 	}
-	
 
 	public static Report create() {
 		Report fire = new Fire();
@@ -58,8 +60,8 @@ public class Fire extends Report {
 		// overriden or overrides?
 		fire.generateMedia(); // also this call is kinda ugly
 		fire.keyword = "Fogo";
-		fire.reportIdentifier = Long.toString(new Date().getTime() );
-		
+		fire.reportIdentifier = Long.toString(new Date().getTime());
+
 		fire.reportSender = ReportSender.create();
 		fire.reportPosition = fire.reportSender.personPosition;
 		fire.reportTimeStamp = Report.sdf.format(date);

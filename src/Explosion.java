@@ -2,19 +2,19 @@ import java.util.Date;
 import java.util.Random;
 
 public class Explosion extends Report {
-	
-	
-	public Explosion(){
+
+	public Explosion() {
 		keywordIdentifier = "rType2";
 	}
-	
+
 	public static class ExplosionFormResponse extends FormResponse {
 
 		public final static int MAX_RESP = 4;
 
-		private static FormAnswer noise[] = { new FormAnswer(0,"Sim"), new FormAnswer(1, "Não") };
-		private static FormAnswer reaction[] = {new FormAnswer(0, "Fogo"), new FormAnswer(1,"Fumaça"), new FormAnswer(2,"Outros") };
-		private static FormAnswer damages[] = { new FormAnswer(0,"Danos visíveis"), new FormAnswer(1,"Nenhum dano") };
+		private static FormAnswer noise[] = { new FormAnswer(0, "Sim"), new FormAnswer(1, "Não") };
+		private static FormAnswer reaction[] = { new FormAnswer(0, "Fogo"), new FormAnswer(1, "Fumaça"),
+				new FormAnswer(2, "Outros") };
+		private static FormAnswer damages[] = { new FormAnswer(0, "Danos visíveis"), new FormAnswer(1, "Nenhum dano") };
 
 		public static ExplosionFormResponse create(int id, Date date) {
 			ExplosionFormResponse resp = new ExplosionFormResponse();
@@ -30,7 +30,7 @@ public class Explosion extends Report {
 				resp.identifier = "8";
 				resp.name = "Reação da explosão";
 				resp.type = "text";
-				resp.multiAnswer= Utils.choicesFrom(FormAnswer.class, reaction, new Random().nextInt(3) + 1);
+				resp.multiAnswer = Utils.choicesFrom(FormAnswer.class, reaction, new Random().nextInt(3) + 1);
 				break;
 			case 2:
 				resp.identifier = "9";
