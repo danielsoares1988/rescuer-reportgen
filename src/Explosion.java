@@ -2,6 +2,12 @@ import java.util.Date;
 import java.util.Random;
 
 public class Explosion extends Report {
+	
+	
+	public Explosion(){
+		keywordIdentifier = "rType2";
+	}
+	
 	public static class ExplosionFormResponse extends FormResponse {
 
 		public final static int MAX_RESP = 4;
@@ -17,25 +23,25 @@ public class Explosion extends Report {
 			case 0:
 				resp.identifier = "7";
 				resp.name = "Você ouviu algo antes da explosão?";
-//				resp.type = "text";
+				resp.type = "text";
 				resp.singleAnswer = noise[new Random().nextInt(2)];
 				break;
 			case 1:
 				resp.identifier = "8";
 				resp.name = "Reação da explosão";
-//				resp.type = "multichoice";
+				resp.type = "text";
 				resp.multiAnswer= Utils.choicesFrom(FormAnswer.class, reaction, new Random().nextInt(3) + 1);
 				break;
 			case 2:
 				resp.identifier = "9";
 				resp.name = "Há algum dano na estrutura física?";
-//				resp.type = "text";
+				resp.type = "text";
 				resp.singleAnswer = damages[new Random().nextInt(2)];
 				break;
 			case 3:
 				resp.identifier = "3";
 				resp.name = "Você vê pessoas feridas?";
-//				resp.type = "text";
+				resp.type = "integ";
 				resp.singleAnswer = injuredZones[new Random().nextInt(injuredZones.length)];
 			}
 			resp.timestamp = Report.sdf.format(date == null ? new Date() : date);

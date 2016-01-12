@@ -10,6 +10,6 @@ public class FormResponse {
 	public String name;
 	public FormAnswer[] multiAnswer;
 	public FormAnswer singleAnswer;
-	//public String type;
+	public String type;
 	public String timestamp;
 }
