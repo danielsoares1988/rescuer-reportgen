@@ -1,12 +1,13 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.TimeZone;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Report {
 
-	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSXXX");
+	public final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
 	public String reportTimeStamp;
 	public ReportSender reportSender;
@@ -24,6 +25,10 @@ public class Report {
 	public int mediaType = -1;
 
 	public String keywordIdentifier = "rTypeUnkn";
+	
+	public Report(){
+		Report.sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+	}
 
 	public void generateMedia() {
 		this.mediaType = new Random().nextInt(3);

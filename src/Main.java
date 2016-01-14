@@ -1,3 +1,5 @@
+import java.text.ParseException;
+import java.util.Date;
 import java.util.Random;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -25,8 +27,16 @@ public class Main {
 				r = Environmental.create();
 				break;
 			}
-			System.out.println(
-					new ObjectMapper().setSerializationInclusion(Include.NON_NULL).writeValueAsString(r) + ",");
+			System.out.println(new ObjectMapper().setSerializationInclusion(Include.NON_NULL).writeValueAsString(r) + ",");		
+			
+			String updatedTimestamp = "";
+			try {
+				updatedTimestamp = Report.sdf.format(new Date((Report.sdf.parse(r.reportTimeStamp).getTime()+1000)));
+			} catch (ParseException e1) {
+				e1.printStackTrace();
+			}					
+			r.reportTimeStamp = updatedTimestamp;			
+			System.out.println(new ObjectMapper().setSerializationInclusion(Include.NON_NULL).writeValueAsString(r) + ",");
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
