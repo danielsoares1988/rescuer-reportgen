@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.Random;
+import java.util.UUID;
 
 public class Explosion extends Report {
 
@@ -56,7 +57,7 @@ public class Explosion extends Report {
 		explosion.generateMedia();
 
 		explosion.keyword = "Explosão";
-		explosion.reportIdentifier = Long.toString(new Date().getTime() + (new Random().nextInt(1000) - 500));
+		explosion.reportIdentifier = UUID.randomUUID().toString();
 		explosion.reportSender = ReportSender.create();
 		explosion.reportPosition = explosion.reportSender.personPosition;
 		explosion.reportTimeStamp = Report.sdf.format(date);

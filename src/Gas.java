@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.Random;
+import java.util.UUID;
 
 public class Gas extends Report {
 
@@ -58,7 +59,7 @@ public class Gas extends Report {
 		gas.generateMedia();
 
 		gas.keyword = "Gas";
-		gas.reportIdentifier = Long.toString(new Date().getTime() + (new Random().nextInt(1000) - 500));
+		gas.reportIdentifier = UUID.randomUUID().toString();
 		gas.reportSender = ReportSender.create();
 		gas.reportPosition = gas.reportSender.personPosition;
 		gas.reportTimeStamp = Report.sdf.format(date);

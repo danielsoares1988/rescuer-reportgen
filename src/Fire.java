@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.Random;
+import java.util.UUID;
 
 public class Fire extends Report {
 
@@ -60,8 +61,7 @@ public class Fire extends Report {
 		// overriden or overrides?
 		fire.generateMedia(); // also this call is kinda ugly
 		fire.keyword = "Fogo";
-		fire.reportIdentifier = Long.toString(new Date().getTime());
-
+		fire.reportIdentifier = UUID.randomUUID().toString();
 		fire.reportSender = ReportSender.create();
 		fire.reportPosition = fire.reportSender.personPosition;
 		fire.reportTimeStamp = Report.sdf.format(date);
