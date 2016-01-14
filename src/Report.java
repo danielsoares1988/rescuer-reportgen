@@ -14,7 +14,9 @@ public class Report {
 	public String keyword;
 	public Position reportPosition;
 	public String reportIdentifier;
+	public boolean canceled;
 	public FormResponse[] formResponse;
+	public String deviceID;
 
 	public MediaPhoto[] mediaPhoto;
 	public MediaVideo[] mediaVideo;
@@ -28,6 +30,8 @@ public class Report {
 	
 	public Report(){
 		Report.sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		canceled = false;
+		deviceID = "60f0b3d74766be8d";
 	}
 
 	public void generateMedia() {
