@@ -58,7 +58,7 @@ public class Gas extends Report {
 
 		gas.generateMedia();
 
-		gas.keyword = "Gas";
+		gas.keyword = "GAS";
 		gas.reportIdentifier = UUID.randomUUID().toString();
 		gas.reportSender = ReportSender.create();
 		gas.reportPosition = gas.reportSender.personPosition;

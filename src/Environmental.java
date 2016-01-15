@@ -59,7 +59,7 @@ public class Environmental extends Report {
 
 		environmental.generateMedia();
 
-		environmental.keyword = "Ambiental";
+		environmental.keyword = "ENVIRONMENTAL";
 		environmental.reportIdentifier = UUID.randomUUID().toString();
 		environmental.reportSender = ReportSender.create();
 		environmental.reportPosition = environmental.reportSender.personPosition;

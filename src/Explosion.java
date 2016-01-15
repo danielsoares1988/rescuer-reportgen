@@ -56,7 +56,7 @@ public class Explosion extends Report {
 
 		explosion.generateMedia();
 
-		explosion.keyword = "Explosão";
+		explosion.keyword = "EXPLOSION";
 		explosion.reportIdentifier = UUID.randomUUID().toString();
 		explosion.reportSender = ReportSender.create();
 		explosion.reportPosition = explosion.reportSender.personPosition;

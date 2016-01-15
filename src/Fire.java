@@ -60,7 +60,7 @@ public class Fire extends Report {
 		// TODO: refactor this if at all possible, can static methods be
 		// overriden or overrides?
 		fire.generateMedia(); // also this call is kinda ugly
-		fire.keyword = "Fogo";
+		fire.keyword = "FIRE";
 		fire.reportIdentifier = UUID.randomUUID().toString();
 		fire.reportSender = ReportSender.create();
 		fire.reportPosition = fire.reportSender.personPosition;
